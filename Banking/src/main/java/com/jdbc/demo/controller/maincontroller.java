@@ -41,7 +41,7 @@ public class maincontroller {
 //	@RequestMapping("/register" )
 //	public String register() {
 //		return "register.jsp";
-//	}
+//	 }
 //	
 	// ============individual account=================
 //	@ResponseBody
