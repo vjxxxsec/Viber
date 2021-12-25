@@ -3,6 +3,8 @@ package com.jdbc.demo.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,9 +32,11 @@ public class maincontroller {
 	@Autowired
 	service service;
 	
+	Logger logger = LoggerFactory.getLogger(maincontroller.class);
 //	============Home page====================
 	@RequestMapping("/" )
 	public String method1() {
+		logger.trace("Invoking the home page");
 		return "home.jsp";
 	}
 	
@@ -57,6 +61,7 @@ public class maincontroller {
 			@RequestParam("aadhar") Long  aadhaar , @RequestParam("mobile") Long mobno , @RequestParam("acctype") String acctype,
 			   @RequestParam("pass") String password , @RequestParam("repass") String repass ,jointreg reg ) 
 	{
+		logger.trace("Invoking the individual reister page");
 		reg.setName(pname);
 		reg.setAge(age);
 		reg.setAddress(address);
@@ -77,6 +82,7 @@ public class maincontroller {
 			    @RequestParam("jname") String jname, @RequestParam("jaccno") String jaccno,  @RequestParam("relationship") String relationship,
 			    @RequestParam("jmobile") long jmob,   jointreg reg ) 
 	{
+		logger.trace("Invoking the joint  reister page");
 		reg.setName(pname);
 		reg.setAge(age);
 		reg.setAddress(address);
