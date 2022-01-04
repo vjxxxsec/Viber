@@ -1,6 +1,7 @@
 package com.jdbc.demo.controller;
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,9 +72,9 @@ public class maincontroller {
 		reg.setPassword(password);
 		reg.setRepass(repass);
 		reg.setAcctype(acctype);
-		return service.method12(reg);
-			
+		return service.method12(reg);	
 	}
+	
 	
 	@ResponseBody
 	@PostMapping("/register2")
@@ -96,8 +97,7 @@ public class maincontroller {
 		reg.setAccnum(jaccno);
 		reg.setRelation(relationship);
 		reg.setMobnum(jmob);
-		return service.method12(reg);
-			
+		return service.method12(reg);		
 	}
 	 
 	
@@ -116,11 +116,9 @@ public class maincontroller {
 			return service.updatedetails(reg);
 				
 		}
-		
-
 
 		
-// =======About page===================	
+// =======About page===================
 	@RequestMapping("/About" )
 	public String about() {
 		return "About.jsp";
@@ -146,7 +144,6 @@ public class maincontroller {
 	}
 
 	//editreesult page
-	
 	@GetMapping("/editpage")
 	public ModelAndView  editpage() {
 		String accno =editform.getAccno();
