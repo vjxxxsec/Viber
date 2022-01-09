@@ -31,11 +31,11 @@ public class service {
 //		+ String.valueOf(key1);
 //		reg.setKey(k);
 //		reg.setAccno(key3);
-//		repo.save(reg);
+//		repo.save(reg);-
 //		k+=1;
 //		return("item added into the table");
 //	}
-	public ModelAndView method12(jointreg reg2) {
+	public String  method12(jointreg reg2) {
 		long key1 = reg2.getAadhaar();
 		String key2= reg2.getName();
 		int l = key2.length();
@@ -45,9 +45,7 @@ public class service {
 		reg2.setAccno(key3);
 		repo2.save(reg2);
 		j+=1;
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("acccreated.jsp");
-		return mv;
+		return "Customer account created";
 	}
 	
 	public individualreg  method13(String accno) {
@@ -79,6 +77,9 @@ public class service {
 		}
 		return mv;	
 		}
+	
+	
+	
 	
 	public ModelAndView editpage(String accno,String pass){
 		ModelAndView mv1 = new ModelAndView();

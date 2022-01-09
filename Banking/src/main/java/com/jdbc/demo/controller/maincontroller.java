@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,14 +31,12 @@ public class maincontroller {
 	
 	Logger logger = LoggerFactory.getLogger(maincontroller.class);
 //	============Home page====================
+	
 	@RequestMapping("/" )
 	public String method1() {
 		logger.trace("Invoking the home page");
 		return "home.jsp";
 	}
-
-	MultipartFile file ;
-	
 	
 
 	
@@ -59,44 +57,18 @@ public class maincontroller {
 	// =============joint account==========
 	@ResponseBody
 	@PostMapping("/register")
-	public ModelAndView  individual (@RequestParam("name") String pname , @RequestParam("age") String  age ,	@RequestParam("street") String address ,
-			@RequestParam("aadhar") Long  aadhaar , @RequestParam("mobile") Long mobno , @RequestParam("acctype") String acctype,
-			   @RequestParam("pass") String password , @RequestParam("repass") String repass ,jointreg reg ) 
+	public String  individual ( @RequestBody jointreg reg ) 
 	{
-		logger.trace("Invoking the individual reister page");
-		reg.setName(pname);
-		reg.setAge(age);
-		reg.setAddress(address);
-		reg.setAadhaar(aadhaar);
-		reg.setMobno(mobno);
-		reg.setPassword(password);
-		reg.setRepass(repass);
-		reg.setAcctype(acctype);
+		logger.trace("Invoking the individual register page");
 		return service.method12(reg);	
 	}
 	
 	
 	@ResponseBody
 	@PostMapping("/register2")
-	public ModelAndView  joint (@RequestParam("name") String pname , @RequestParam("age") String  age ,	@RequestParam("street") String address ,
-			@RequestParam("aadhar") Long  aadhaar , @RequestParam("mobile") Long mobno , @RequestParam("acctype") String acctype,
-			   @RequestParam("pass") String password , @RequestParam("repass") String repass ,
-			    @RequestParam("jname") String jname, @RequestParam("jaccno") String jaccno,  @RequestParam("relationship") String relationship,
-			    @RequestParam("jmobile") long jmob,   jointreg reg ) 
+	public String  joint (@RequestBody jointreg reg ) 
 	{
 		logger.trace("Invoking the joint  reister page");
-		reg.setName(pname);
-		reg.setAge(age);
-		reg.setAddress(address);
-		reg.setAadhaar(aadhaar);
-		reg.setMobno(mobno);
-		reg.setPassword(password);
-		reg.setRepass(repass);
-		reg.setAcctype(acctype);
-		reg.setAccholdname(jname);
-		reg.setAccnum(jaccno);
-		reg.setRelation(relationship);
-		reg.setMobnum(jmob);
 		return service.method12(reg);		
 	}
 	 
@@ -104,15 +76,7 @@ public class maincontroller {
 	// =============savepersonal details==========
 		@ResponseBody
 		@PostMapping("/savepersonaldetails")
-		public ModelAndView  savedetails (@RequestParam("name") String pname , @RequestParam("accno") String accno ,
-				@RequestParam("age") String  age ,	@RequestParam("address") String address , @RequestParam("aadhaar") Long  aadhaar ,
-				@RequestParam("mobno") Long mobno ,   jointreg reg) {
-			reg.setAccno(accno);
-			reg.setName(pname);
-			reg.setAge(age);
-			reg.setAddress(address);
-			reg.setAadhaar(aadhaar);
-			reg.setMobno(mobno);
+		public ModelAndView  savedetails (@RequestBody jointreg reg) {
 			return service.updatedetails(reg);
 				
 		}
@@ -135,11 +99,7 @@ public class maincontroller {
 	
 	loginmodel editform = new loginmodel();
 	@GetMapping("/personaldetails")
-	public ModelAndView  personaldetails( @RequestParam("cid") String cid, @RequestParam("pass") String pass,   loginmodel login ) {
-			editform.setAccno(cid);
-			editform.setPass(pass);
-			login.setAccno(cid);
-			login.setPass(pass);
+	public ModelAndView  personaldetails( @RequestBody  loginmodel login ) {
 			return service.landingpage(login);		
 	}
 
