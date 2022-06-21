@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="AVITEPA_bank/.mvn/wrapper"/>
+	<classpathentry kind="src" path="AVITEPA_bank/src/main/java"/>
+	<classpathentry kind="src" path="AVITEPA_bank/src/test/java"/>
+	<classpathentry kind="src" path="Banking/.mvn/wrapper"/>
+	<classpathentry kind="src" path="Banking/src/main/java"/>
+	<classpathentry kind="src" path="Banking/src/test/java"/>
+	<classpathentry kind="src" path="Multipart demo/.mvn/wrapper"/>
+	<classpathentry kind="src" path="Multipart demo/src/main/java"/>
+	<classpathentry kind="src" path="Multipart demo/src/test/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

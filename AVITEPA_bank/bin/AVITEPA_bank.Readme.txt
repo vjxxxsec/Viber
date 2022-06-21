@@ -1,0 +1,107 @@
+
+
+Please use the available port nu,ber in the place of 8123 in the endpoints:
+
+
+================= To create joint account (Current/savings) ================
+
+Endpoint : http://localhost:8123/register2
+{
+    "name":"vijay",
+    "age":23,
+    "address":"Dharmapuri",
+    "aadhaar":25447847889,
+    "mobno":9467426426742,
+    "password":"vijay123",
+    "repass":"vijay123"                                                                                                                                                                                                              ,
+     "accholdname":"Elavarasan",
+    "accnum":"df3764747",
+    "relation":"Father",
+    "age2":50,
+    "mobnum":9715681373,
+    "acctype":"joint"
+}
+
+=================== To create Individual account (Current/savings) ======================
+Endpoint : http://localhost:8123/register
+{
+    "name":"Ajay",
+    "age":23,
+    "address":"Dharmapuri",
+    "aadhaar":2554644747889,
+    "mobno":9463838264,
+    "password":"vueh123",
+    "repass":"edgeheb123",
+     "acctype":"Individual"
+}
+
+=================== To create Current account ======================
+Endpoint : http://localhost:8123/register3
+{
+    "name":"Ajay",
+    "age":23,
+    "address":"Dharmapuri",
+    "aadhaar":2554644747889,
+    "mobno":9463838264,
+    "password":"vueh123",
+    "repass":"edgeheb123",
+    "acctype":"Current"
+}
+
+=== To delete all accounts  ============
+Endpoint : http://localhost:8123/deleteall
+
+=== To check the balance in account  ============
+Endpoint : http://localhost:8123/balance/{accno}
+
+====== To delete particular  user account  ===========
+Endpoint : http://localhost:8123/deleteuser/accountnumber
+
+---------- To get the particular users information  -----------------
+Endpoint : http://localhost:8123//getuser/{accno}
+
+---------- To get  all users information  -----------------
+Endpoint : http://localhost:8123//getusers
+
+============ Deposit amount API ==============
+ Endpoint : http://localhost:8123/deposit
+{
+  "accno":"Ay2554644747889",
+  "amount":10000
+}
+
+
+============= Transfer amount API =======
+Endpoint : http://localhost:8123/transferamount
+{
+  "saccno":"vy25447847889",
+  "raccno":"Ay2554644747889",
+  "amount":1000
+}
+
+---------- Another way to get the particular user information by giving the password   -----------------
+Endpoint : http://localhost:8123/personaldetails
+{
+    "accno":"Ay2554644747889",
+    "pass":"vueh123"
+}
+
+---------- To update the personal details of the user  -----------------
+
+Endpoint : http://localhost:8123/updatedetails
+
+Applies for all three type of accounts 
+{
+    "name":"Ajay",
+    "age":23, -- editable
+    "address":"Dharmapuri", - editable 
+    "aadhaar":2554644747889,
+    "mobno":9463838264, - editable 
+    "password":"vueh123",
+    "repass":"edgeheb123",
+     "acctype":"Individual"
+}
+
+
+
+

@@ -141,7 +141,7 @@ public class maincontroller {
 			public String balancecheck(@PathVariable String accno) {
 				return service.balancecheck(accno);
 			}
-			
+		
 //   ==================Transfer amount===================			
 			
 			@PostMapping("/transferamount")
@@ -149,8 +149,7 @@ public class maincontroller {
 				return service.transfer(transfer);
 				
 			}
-			
-			
+
 //	=============== Delete customer account ==============
 			@DeleteMapping("/deleteuser/{accno}")
 			public String  deletedetails (@PathVariable String  accno) {
